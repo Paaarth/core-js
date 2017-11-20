@@ -1,2 +1,3 @@
 # core-js
-This is simple file to get github user data.
+This is simle Javascript Programmes!!!
+Hope this helps :-)

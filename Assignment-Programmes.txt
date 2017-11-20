@@ -1,0 +1,180 @@
+Question.
+Python, Ruby or JavaScript Write a function that takes an array of integers and returns that array rotated by N positions using JavaScript.
+For example, if N=2, given the input array [1, 2, 3, 4, 5, 6]
+the function should return [5, 6, 1, 2, 3, 4]
+
+Answer:-
+var array = [1, 2, 3, 4, 5, 6];
+var N = 2;
+function rotateArray(array, N) {
+  newArray =  array.slice(array.length - N).concat(array.slice(0, array.length - N));
+  return newArray;
+}
+rotateArray(array, N);
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------
+
+Question.
+In JavaScript , answer if the following expressions result in true or false (and explain your
+answer)
+a. "0" == 0 // true or false?
+b. "" == 0 // true or false?
+c. "" == "0" // true or false?
+
+Answer:-
+console.log("0" == 0);
+//In this case, leftval/leftoprnd is String and rightval/rightoprnd is Number Jvascript check Equality(operand string convert into Number type) ToNumber(0) == 0
+console.log("" == 0);
+//In this case, leftval/leftoprnd is String and rightval/rightoprnd is Number Jvascript check Equality(operand "" convert into Number type) ToNumber(0) == 0
+console.log("" == "0");
+//In this case, both operands are String type and both are not same valued so will return as false;
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------
+
+Question.
+Most languages have a built in sort method that will sort an array of strings alphabetically. Demonstrate how to sort an array of strings by the length of each string, shortest strings first.
+Hint: clean, small code wins.
+
+Answer:-
+arr = []
+arr[0] = "a";
+arr[1] = "abcdef";
+arr[2] = "abc";
+arr[3] = "ab";
+arr[4] = "abcde";
+arr[5] = "abcd";
+arr.sort(function(array1, array2){
+  return array1.length - array2.length;
+});
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------
+
+Question.
+function weird(x) {
+var tmp = 3;
+return function(y) {
+return x + y + ++tmp;
+}
+}
+var funny = weird(2);
+var final_answer = funny(10);
+What is the value of final_answer at the end of this snippet? Please explain your answer
+
+Answer:-
+function weird(x) { //x parameter is 2
+	var tmp = 3;
+	return function(y) { 
+	return x + y + ++tmp; //returns 2 + 10 + 4(incremented value 3+1) = 16 
+	}
+}
+var funny = weird(2);
+var final_answer = funny(10);
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------
+
+Question.
+Consider the following pattern:
+A → D M → P X → A
+a → d m → p x → a
+Now, write a program to solve the following message using Python, JavaScript or Ruby.
+Vrphwklqj phdqlqjixo
+Hint: The answer is something meaningful.
+
+Answer:-
+function convertString(string) {
+    for (var i = 0; i < string.length; i++) {
+        var asc_code = string.charCodeAt(i);
+        var conv_code;
+        if ((asc_code >= 65 && asc_code <= 67) || (asc_code >= 97 && asc_code <= 99)) {
+            conv_code = asc_code + 23;
+        } else if ((asc_code >= 68 && asc_code <= 90) || (asc_code >= 100 && asc_code <= 122)) {
+            conv_code = asc_code - 3;
+        } else if (asc_code == 32 ) {
+	    conv_code = asc_code;
+	}
+	else
+	    conv_code = asc_code;
+
+        document.write(String.fromCharCode(conv_code));
+    }
+}
+
+convertString("Vrphwklqj phdqlqjixo");
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------
+
+Question.
+Use the following paragraphs (in italics below) as input to the program you wrote for Question 5.
+It should output a meaningful question. Write a program to solve that question.
+Zulwh d surjudp (lq Sbwkrq, MdydVfulsw ru Uxeb) wr srsxodwh dqg wkhq vruw d
+udqgrpob glvwulexwhg olvw ri 1 ploolrq lqwhjhuv, hdfk lqwhjhu kdylqj d ydoxh >= 1 dqg <=
+100 zlwkrxw xvlqj dqb exlowlq/hawhuqdo oleudub/ixqfwlrq iru vruwlqj.
+Brxu surjudp vkrxog fduhixoob frqvlghu wkh lqsxw dqg frph xs zlwk wkh prvw hiilflhqw
+vruwlqj vroxwlrq brx fdq wklqn ri. Surylgh wkh vsdfh dqg wlph frpsohalwb ri brxu dojrulwkp
+
+
+convertString(`Zulwh ​d ​surjudp ​(lq ​Sbwkrq, ​MdydVfulsw ​ru ​Uxeb) ​wr ​srsxodwh ​dqg ​wkhq ​vruw ​d
+udqgrpob ​glvwulexwhg ​olvw ​ri ​1 ​ploolrq ​lqwhjhuv, ​hdfk ​lqwhjhu ​kdylqj ​d ​ydoxh ​>= ​1 ​dqg ​<=
+100 ​zlwkrxw ​xvlqj ​dqb ​exlowlq/hawhuqdo ​oleudub/ixqfwlrq ​iru ​vruwlqj.
+Brxu ​surjudp ​vkrxog ​fduhixoob ​frqvlghu ​wkh ​lqsxw ​dqg ​frph ​xs ​zlwk ​wkh ​prvw ​hiilflhqw
+vruwlqj ​vroxwlrq ​brx ​fdq ​wklqn ​ri. ​Surylgh ​wkh ​vsdfh ​dqg ​wlph ​frpsohalwb ​ri ​brxu ​dojrulwkp`);
+
+
+Answer:
+var randomList = [];
+for (var i = 0; i < 100; i++) {
+    randomList.push(Math.round(Math.random() * 999999))
+}
+
+function bubbleSort(randomListArray) {
+    var nextLast = randomListArray.length - 1, holder, swappingOccured, index, nextIndex;
+    randomListArray.some(function() {
+        swappingOccured = false;
+        for (index = 0; index < nextLast; index += 1) {
+            nextIndex = index + 1;
+            if (randomListArray[index] > randomListArray[nextIndex]) {
+                holder = randomListArray[nextIndex];
+                randomListArray[nextIndex] = randomListArray[index];
+                randomListArray[index] = holder;
+                swappingOccured = true;
+            }
+        }
+        if (!swappingOccured) {
+            return true;
+        }
+        return false;
+    });
+}
+
+bubbleSort(randomList);
+
+console.log(randomList);
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------
+
+Question.
+Write a simple program that reads a line from the keyboard and outputs the same line where
+every word is reversed. A word is defined as a continuous sequence of alphanumeric characters
+or hyphen (‘-’). For instance, if the input is
+"We are at Google Solutions! Their email-id is careers@google.com"
+the output should be
+"eW era ta elgooG snoituloS! riehT di-liame si sreerac@elgoog.moc"
+HINT: Read the problem and the example carefully before starting
+
+Answer:-
+
+var _string = "We are at Google Solutions! Their email-id is careers@google.com";
+var fnReverseString = function(_string){
+  return _string.replace(/[a-zA-Z0-9-_]+/gm, function(_response) {    
+        return _response.split("").reverse().join("");
+    });
+};
+console.log(fnReverseString(_string));
